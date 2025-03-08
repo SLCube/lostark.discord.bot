@@ -1,10 +1,10 @@
 package com.slcube.adapter;
 
 import com.slcube.application.use_case.out.CalendarScheduleInfoPort;
+import com.slcube.config.LostArkApiProperties;
 import com.slcube.dto.CalendarScheduleInfoDto;
 import com.slcube.model.CalendarSchedule;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -20,20 +20,15 @@ import java.util.List;
 public class CalendarScheduleInfoAdapter implements CalendarScheduleInfoPort {
 
     private final RestTemplate restTemplate;
-
-    @Value("${lostark.api.key}")
-    private String apiKey;
-
-    @Value("${lostark.api.url}")
-    private String apiUrl;
+    private final LostArkApiProperties lostArkApiProperties;
 
     @Override
     public List<CalendarSchedule> fetchCalendarScheduleInfo() {
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.set("Authorization", "Bearer " + apiKey);
+        httpHeaders.set("Authorization", "Bearer " + lostArkApiProperties.getKey());
 
         HttpEntity<?> request = new HttpEntity<>(httpHeaders);
-        ResponseEntity<List<CalendarScheduleInfoDto>> result = restTemplate.exchange(apiUrl, HttpMethod.GET, request, new ParameterizedTypeReference<>() {
+        ResponseEntity<List<CalendarScheduleInfoDto>> result = restTemplate.exchange(lostArkApiProperties.getUrl(), HttpMethod.GET, request, new ParameterizedTypeReference<>() {
         });
 //        return result.getBody();
         return List.of();
