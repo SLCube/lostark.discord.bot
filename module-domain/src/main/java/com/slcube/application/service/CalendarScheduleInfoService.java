@@ -1,7 +1,7 @@
 package com.slcube.application.service;
 
 import com.slcube.application.use_case.in.ProvideCalendarScheduleInfoUseCase;
-import com.slcube.application.use_case.out.CalendarScheduleInfoOutPort;
+import com.slcube.application.use_case.out.CalendarScheduleInfoPort;
 import com.slcube.model.CalendarSchedule;
 import lombok.RequiredArgsConstructor;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CalendarScheduleInfoService implements ProvideCalendarScheduleInfoUseCase {
 
-    private final CalendarScheduleInfoOutPort outPort;
+    private final CalendarScheduleInfoPort outPort;
 
     @Override
     public List<CalendarSchedule> getTodayTravelIslandInfoList(LocalDate targetDate) {

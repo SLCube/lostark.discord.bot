@@ -1,6 +1,6 @@
 package com.slcube.adapter;
 
-import com.slcube.application.use_case.out.CalendarScheduleInfoOutPort;
+import com.slcube.application.use_case.out.CalendarScheduleInfoPort;
 import com.slcube.dto.CalendarScheduleInfoDto;
 import com.slcube.model.CalendarSchedule;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Component
-public class CalendarScheduleInfoAdapter implements CalendarScheduleInfoOutPort {
+public class CalendarScheduleInfoAdapter implements CalendarScheduleInfoPort {
 
     private final RestTemplate restTemplate;
 

@@ -8,7 +8,7 @@ import java.util.List;
 @Getter
 public class CalendarSchedule {
 
-    private String islandName;
+    private String contentName;
     private String rewardType;
     private String categoryName;
     private List<LocalDateTime> startTimes;

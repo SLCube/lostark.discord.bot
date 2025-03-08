@@ -18,7 +18,7 @@ dependencies {
     implementation project(':module-domain')
 
 //    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
+//    runtimeOnly project(':module-app')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
