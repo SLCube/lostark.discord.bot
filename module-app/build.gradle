@@ -19,6 +19,8 @@ dependencies {
 
     implementation project(':module-domain')
 
+    runtimeOnly project(':module-infra')
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

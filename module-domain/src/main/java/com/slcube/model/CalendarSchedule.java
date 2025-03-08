@@ -10,5 +10,6 @@ public class CalendarSchedule {
 
     private String islandName;
     private String rewardType;
+    private String categoryName;
     private List<LocalDateTime> startTimes;
 }

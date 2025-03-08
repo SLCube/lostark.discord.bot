@@ -3,6 +3,7 @@ package com.slcube.adapter;
 import com.slcube.application.use_case.out.CalendarScheduleInfoOutPort;
 import com.slcube.dto.CalendarScheduleInfoDto;
 import com.slcube.model.CalendarSchedule;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Component
 public class CalendarScheduleInfoAdapter implements CalendarScheduleInfoOutPort {
 
@@ -24,10 +26,6 @@ public class CalendarScheduleInfoAdapter implements CalendarScheduleInfoOutPort 
 
     @Value("${lostark.api.url}")
     private String apiUrl;
-
-    public CalendarScheduleInfoAdapter(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
 
     @Override
     public List<CalendarSchedule> fetchCalendarScheduleInfo() {
