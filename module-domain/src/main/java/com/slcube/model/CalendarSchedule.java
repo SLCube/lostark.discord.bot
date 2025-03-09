@@ -22,6 +22,7 @@ public class CalendarSchedule {
         this.items = items;
     }
 
+    @Getter
     public static class Item {
         private final String name;
         private final List<LocalDateTime> startTimes;

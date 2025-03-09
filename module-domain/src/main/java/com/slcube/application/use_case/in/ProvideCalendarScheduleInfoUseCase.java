@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ProvideCalendarScheduleInfoUseCase {
 
-    List<CalendarSchedule> getTodayTravelIslandInfoList(LocalDate targetDate);
+    List<CalendarSchedule> getTravelIslandInfoListByTargetDate(LocalDate targetDate);
 }

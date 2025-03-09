@@ -15,7 +15,7 @@ public class CalendarScheduleInfoService implements ProvideCalendarScheduleInfoU
     private final CalendarScheduleInfoPort outPort;
 
     @Override
-    public List<CalendarSchedule> getTodayTravelIslandInfoList(LocalDate targetDate) {
+    public List<CalendarSchedule> getTravelIslandInfoListByTargetDate(LocalDate targetDate) {
         return filterTravelIslandInfoByTargetDate(outPort.fetchCalendarScheduleInfo(), targetDate);
     }
 
