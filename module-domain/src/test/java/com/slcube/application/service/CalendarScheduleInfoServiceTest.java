@@ -32,8 +32,10 @@ class CalendarScheduleInfoServiceTest {
         BDDMockito.given(outPort.fetchCalendarScheduleInfo()).willReturn(createLostArkCalendarSchedules());
 
         List<CalendarSchedule> travelIslandInfoListByTargetDate = calendarScheduleInfoService.getTravelIslandInfoListByTargetDate(LocalDate.of(2025, 3, 8));
+        
         assertThat(travelIslandInfoListByTargetDate).hasSize(1);
         CalendarSchedule travelIslandInfo = travelIslandInfoListByTargetDate.get(0);
+
         assertThat(travelIslandInfo.getContentName()).isEqualTo("잔혹한 장난감 성");
         assertThat(travelIslandInfo.getCategoryName()).isEqualTo("모험 섬");
         assertThat(travelIslandInfo.getItems().stream()
