@@ -40,7 +40,7 @@ class CalendarScheduleInfoServiceTest {
         assertThat(travelIslandInfo.getCategoryName()).isEqualTo("모험 섬");
         assertThat(travelIslandInfo.getItems().stream()
                 .filter(item -> item.getStartTimes() != null && !item.getStartTimes().isEmpty())
-                .findAny()
+                .findFirst()
                 .orElseThrow(IllegalStateException::new)
                 .getName())
                 .isEqualTo("골드");
