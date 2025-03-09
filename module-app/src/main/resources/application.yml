@@ -1,3 +1,0 @@
-spring:
-  config:
-    import: file:../../../module-infra/src/main/resources/lostarkApi.yml

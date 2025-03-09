@@ -10,5 +10,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class LostArkApiProperties {
 
     private String key;
-    private String url;
+    private String url = "https://developer-lostark.game.onstove.com/gamecontents/calendar";
 }
