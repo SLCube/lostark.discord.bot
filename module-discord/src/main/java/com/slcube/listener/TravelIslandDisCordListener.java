@@ -1,6 +1,6 @@
 package com.slcube.listener;
 
-import com.slcube.application.use_case.in.ProvideCalendarScheduleInfoUseCase;
+import com.slcube.presentation.TravelIslandPresentation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.entities.Message;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class TravelIslandDisCordListener extends ListenerAdapter {
 
-    private final ProvideCalendarScheduleInfoUseCase calendarScheduleInfoUseCase;
+    private final TravelIslandPresentation travelIslandPresentation;
 
     @Value("${discord.channel.id}")
     private String targetChannelId;
