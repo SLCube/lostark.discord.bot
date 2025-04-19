@@ -4,7 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
-bootJar.enabled = false
+bootJar.enabled = true
 jar.enabled = true
 
 repositories {
@@ -16,7 +16,8 @@ dependencies {
 
     implementation project(':module-domain')
     implementation project(':module-infra')
-    implementation project(':module-app')
+    implementation project(':module-discord')
+    implementation project(':module-presentation')
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -24,4 +25,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+bootJar {
+    archiveFileName  = 'lostart.discord.bot-0.0.1-SNAPSHOT.jar'
+    destinationDirectory = file("$rootDir/build/libs")
 }

@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 }
 
+jar.enabled = false
+
 subprojects {
 	group = 'com.slcube'
 	version = '0.0.1-SNAPSHOT'
@@ -26,5 +28,9 @@ subprojects {
 
 	tasks.named('test') {
 		useJUnitPlatform()
+	}
+
+	tasks.named('build') {
+		dependsOn(':module-boot:bootJar')
 	}
 }
