@@ -1,5 +1,6 @@
 rootProject.name = 'lostart.discord.bot'
 
+include 'module-boot'
 include 'module-domain'
 include 'module-app'
 include 'module-infra'
